@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在spring配置文件配置对象创建，配置构造器注入-->
+    <!--使用spring，利用有参构造器注入属性(创建对象时，默认执行无参构造方法)-->
+    <bean id="order" class="cn.spring.learn.Order">
+        <constructor-arg name="name" value="书籍购买订单"></constructor-arg>
+        <constructor-arg name="address" value="中国北京"></constructor-arg>
+
+        <!--        <constructor-arg index="0" value="买点啥"></constructor-arg>-->
+        <!--        <constructor-arg index="1" value="中国上海"></constructor-arg>-->
+    </bean>
+</beans>

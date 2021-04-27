@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    集合类型属性注入-->
+    <bean id="stu" class="cn.spring.learn.collectionType.Student">
+        <!--        数组注入-->
+        <property name="courses">
+            <array>
+                <value>Java基本</value>
+                <value>Spring框架入门</value>
+            </array>
+        </property>
+
+        <!-- list注入-->
+        <property name="list">
+            <list>
+                <value>好好学习</value>
+                <value>天天向上</value>
+            </list>
+        </property>
+
+        <!--        map注入-->
+        <property name="map">
+            <map>
+                <entry key="JUC" value="java Util Concurrent多线程"></entry>
+                <entry key="JVM" value="java 虚拟机"></entry>
+            </map>
+        </property>
+
+        <!--        set注入-->
+        <property name="set">
+            <set>
+                <value>springBoot</value>
+                <value>springCloud</value>
+            </set>
+        </property>
+
+        <!--        注入对象集合-->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="course1" class="cn.spring.learn.collectionType.Course">
+        <property name="courseName" value="数据结构与算法"></property>
+    </bean>
+    <bean id="course2" class="cn.spring.learn.collectionType.Course">
+        <property name="courseName" value="设计模式"></property>
+    </bean>
+
+</beans>

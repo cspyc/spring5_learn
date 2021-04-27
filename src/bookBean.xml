@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在spring配置文件配置对象创建，配置属性注入-->
+    <!--使用spring，利用set方法注入属性(创建对象时，默认执行无参构造方法)-->
+    <bean id="book" class="cn.spring.learn.Book">
+        <!--使用property完成属性注入 - 需要Book类中有对应属性的Setter方法
+            name: 类里面属性名称
+            value:向属性注入的值
+            -->
+        <property name="name" value="Java基本"></property>
+        <property name="author" value="hsp"></property>
+        <!--设置null值-->
+        <!--        <property name="address">-->
+        <!--            <null/>-->
+        <!--        </property>-->
+
+        <!--        属性值包含特殊符号
+            1.把<>进行转义：&lt;&gt;
+            2.把带特殊符号内容写到CDATA
+        -->
+        <property name="address">
+            <value>
+                <![CDATA[<<南京>>]]>
+            </value>
+        </property>
+    </bean>
+</beans>

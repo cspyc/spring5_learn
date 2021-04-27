@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--    提取公共集合类型属性注入-->
+    <util:list id="bookList">
+        <value>设计模式</value>
+        <value>数据结构与算法</value>
+    </util:list>
+
+    <!--    提取list集合类型属性注入使用-->
+    <bean id="book" class="cn.spring.learn.collectionType.Book" scope="singleton"
+          init-method="initialMethod" destroy-method="destroyMethod">
+<!--        <property name="list" ref="bookList"></property>-->
+    </bean>
+
+    <!--    配置后置处理器-->
+    <bean id="myBeanProcessor" class="cn.spring.learn.collectionType.MyBeanProcessor"></bean>
+</beans>

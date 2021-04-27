@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    级联赋值-->
+    <!--    <bean id="emp" class="cn.spring.learn.company.Emp">-->
+    <!--        &lt;!&ndash;        设置两个普通属性&ndash;&gt;-->
+    <!--        <property name="name" value="小王"></property>-->
+    <!--        <property name="gender" value="男"></property>-->
+
+    <!--        &lt;!&ndash;        级联赋值,引用外部bean&ndash;&gt;-->
+    <!--        <property name="dept" ref="dept"></property>-->
+    <!--    </bean>-->
+    <!--    <bean id="dept" class="cn.spring.learn.company.Dept">-->
+    <!--        <property name="name" value="财务部"></property>-->
+    <!--    </bean>-->
+
+    <bean id="emp" class="cn.spring.learn.company.Emp">
+        <!--        设置两个普通属性-->
+        <property name="name" value="小王"></property>
+        <property name="gender" value="男"></property>
+
+        <!--        级联赋值,引用外部bean-->
+        <property name="dept" ref="dept"></property>
+        <!--            需要使用到Emp对象中，dept的getter方法-->
+        <property name="dept.name" value="技术部"></property>
+    </bean>
+    <bean id="dept" class="cn.spring.learn.company.Dept">
+    </bean>
+
+</beans>
