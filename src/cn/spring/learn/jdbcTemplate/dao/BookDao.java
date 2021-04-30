@@ -23,4 +23,7 @@ public interface BookDao {
 
     int[] batchAdd(List<Object[]> addList);
 
+    int[] batchUpdate(List<Object[]> updateList);
+
+    int[] batchDelete(List<Object[]> deleteList);
 }

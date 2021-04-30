@@ -6,12 +6,16 @@
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
 
     <!--    配置数据库连接-->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/spring_jdbctemplate_demo"></property>
         <property name="username" value="root"></property>
         <property name="password" value="pyc123"></property>
+        <property name="filters" value="stats,log4j"></property>
     </bean>
+
+
+
 
     <!--    将数据库连接配置注入jdbcTemplate-->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">

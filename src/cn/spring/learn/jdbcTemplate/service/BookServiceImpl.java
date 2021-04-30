@@ -52,4 +52,14 @@ public class BookServiceImpl implements BookService {
     public int[] batchAdd(List<Object[]> addList) {
         return bookDao.batchAdd(addList);
     }
+
+    @Override
+    public int[] batchUpdate(List<Object[]> updateList) {
+        return bookDao.batchUpdate(updateList);
+    }
+
+    @Override
+    public int[] batchDelete(List<Object[]> deleteList) {
+       return bookDao.batchDelete(deleteList);
+    }
 }

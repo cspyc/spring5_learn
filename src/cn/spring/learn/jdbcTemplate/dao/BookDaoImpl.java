@@ -90,5 +90,19 @@ public class BookDaoImpl implements BookDao {
         return executeResult;
     }
 
+    @Override
+    public int[] batchUpdate(List<Object[]> updateList) {
+        String updateSql = "update book set name=? where id=?";
+        int[] batchUpdateResult = jdbcTemplate.batchUpdate(updateSql, updateList);
+        return batchUpdateResult;
+    }
+
+    @Override
+    public int[] batchDelete(List<Object[]> deleteList) {
+        String deleteSql = "delete from book where id = ?";
+        int[] batchDeleteResult = jdbcTemplate.batchUpdate(deleteSql, deleteList);
+        return batchDeleteResult;
+    }
+
 
 }
