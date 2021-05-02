@@ -7,7 +7,7 @@
 *.class
 
 #包文件
-*.jar
+
 *.war
 *.zip
 *.rar
